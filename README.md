@@ -106,3 +106,4 @@ placeholder content — swap the following before going live:
    works from any sub-path without extra configuration.
 
 No environment variables, backend, or database are required.
+# maison_baraka
