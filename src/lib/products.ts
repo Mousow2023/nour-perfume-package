@@ -11,6 +11,12 @@ export type Product = {
   image: string
 }
 
+const oudImage = new URL('../assets/products/oud.jpeg', import.meta.url).href
+const freshImage = new URL('../assets/products/fresh.jpeg', import.meta.url).href
+const hayatiImage = new URL('../assets/products/hayati.jpeg', import.meta.url).href
+const mawsoufImage = new URL('../assets/products/mawsouf.jpeg', import.meta.url).href
+const wardImage = new URL('../assets/products/ward.jpeg', import.meta.url).href
+
 export const products: Product[] = [
   {
     id: 'oud-noir',
@@ -22,7 +28,7 @@ export const products: Product[] = [
     price: '25.000 FCFA',
     color: '#8a5a3a',
     colorDeep: '#4a2f1c',
-    image: 'src/assets/products/oud.jpeg',
+    image: oudImage,
   },
   {
     id: 'sapphire-veil',
@@ -34,7 +40,7 @@ export const products: Product[] = [
     price: '15.000 FCFA',
     color: '#3f6f9e',
     colorDeep: '#1e3c57',
-    image: 'src/assets/products/fresh.jpeg',
+    image: freshImage,
   },
   {
     id: 'golden-hour',
@@ -46,7 +52,7 @@ export const products: Product[] = [
     price: '10.000 FCFA',
     color: '#d9a13c',
     colorDeep: '#7a5417',
-    image: 'src/assets/products/hayati.jpeg',
+    image: hayatiImage,
   },
   {
     id: 'blush-mirage',
@@ -58,7 +64,7 @@ export const products: Product[] = [
     price: '8.500 FCFA',
     color: '#d98fa0',
     colorDeep: '#7a3f4c',
-    image: 'src/assets/products/mawsouf.jpeg',
+    image: mawsoufImage,
   },
   {
     id: 'velvet-orchid',
@@ -70,6 +76,6 @@ export const products: Product[] = [
     price: '15.000 FCFA',
     color: '#7a4f8c',
     colorDeep: '#3f2650',
-    image: 'src/assets/products/ward.jpeg',
+    image: wardImage,
   },
 ]
