@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@import "@fontsource/fraunces/400.css";
+@import "@fontsource/fraunces/500.css";
+@import "@fontsource/fraunces/600.css";
+@import "@fontsource/fraunces/300-italic.css";
+@import "@fontsource/fraunces/500-italic.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+@theme {
+  /* ---- Colour system: warm ink + antique gold + oxblood, drawn from
+     bakhoor smoke, aged brass hardware and jewel-toned oils ---- */
+  --color-ink: #0e0c11;
+  --color-ink-soft: #191319;
+  --color-ink-line: #2c2530;
+
+  --color-bone: #f5efe3;
+  --color-bone-dim: #e9dfc9;
+  --color-bone-line: #d9cbab;
+
+  --color-gold: #c6974e;
+  --color-gold-light: #e9d3a3;
+  --color-gold-deep: #96702f;
+
+  --color-oxblood: #4a1620;
+  --color-oxblood-light: #6e2130;
+
+  --color-plum: #221d24;
+  --color-muted: #8d8177;
+  --color-muted-light: #b6ac9d;
+
+  /* ---- Type ---- */
+  --font-display: "Fraunces", "Iowan Old Style", ui-serif, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* ---- Motion ---- */
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bone);
+    color: var(--color-plum);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-eyebrow {
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+
+  .rule-gold {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-gold) 20%,
+      var(--color-gold) 80%,
+      transparent
+    );
+    height: 1px;
+  }
+
+  .bg-grain {
+    position: relative;
+  }
+
+  .bg-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
